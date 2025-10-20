@@ -5,16 +5,28 @@ function MovieDetail({ id, coverImg, backImg, title, description1,description2, 
     return (
         <div id={id} style={{
             padding:"50px",
-            backgroundImage: `url(${backImg})`,
+           
+            backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.7)),url(${backImg})`,
             backgroundRepeat: "no-repeat",
             backgroundSize: "cover",
-            color: 'white'
+            color: 'white',
+            height:"100vh"
 
         }}>
             <h1>{title}</h1><hr />
+            <div style={{
+                display:"flex",
+                gap:"50px",
+                
+            }}>
             <img src={coverImg} alt={title} />
             <ul style={{
-                fontSize:"25px"
+                fontSize:"25px",
+                listStyleType:"none",
+                display:"flex",
+                flexDirection:"column",
+                gap:"15px"
+               
             }}>
                 
                 <li>상영시간: {runtime} min</li>
@@ -35,6 +47,7 @@ function MovieDetail({ id, coverImg, backImg, title, description1,description2, 
                     </ul>
                 </li>
             </ul>
+            </div>
         </div>
     );
 }
